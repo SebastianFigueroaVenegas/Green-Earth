@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'resultados.css' %}">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de Edades</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Resultados Encuesta</h1>
+            <p>El promedio de las edades es: {{ promedio_edad }}</p>
+            <p>Se registran {{ contador }} personas entre 18 y 35 años, de un total de {{ total_participantes }} que realizaron la encuesta.</p>
+
+            <div>
+                <p>¿Te gustaría que al participar de este proyecto se te informara semanalmente de las actividades realizadas?</p>
+                <p>Un {{ porce_true1|floatformat:2 }}% dijo "Sí" y un {{ porce_false1|floatformat:2 }}% dijo "No" a la pregunta.</p>
+            </div>
+
+            <div>
+                <p>¿Crees que informar sobre los beneficios de salud ayude a incentivar a las personas a participar en este proyecto?</p>
+                <p>Un {{ porce_true2|floatformat:2 }}% dijo "Sí" y un {{ porce_false2|floatformat:2 }}% dijo "No" a la pregunta.</p>
+            </div>
+
+            <div>
+                <p>¿Un Reconocimiento periódico motivaría a una persona a seguir apoyando este proyecto?</p>
+                <p>Un {{ porce_true3|floatformat:2 }}% dijo "Sí" y un {{ porce_false3|floatformat:2 }}% dijo "No" a la pregunta.</p>
+            </div>
+            <a class="cta-button" href="{% url 'encuesta' %}" >Volver</a>
+
+        </div>
+    </header>
+
+    <footer>
+        <p>© 2024 GreenAir Tech | <a href="#contact">Contáctanos</a></p>
+    </footer>
+
+</body>
+</html>

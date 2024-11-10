@@ -1,0 +1,114 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'estilo.css' %}">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenAir Tech - Encuesta</title>
+
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Drones por un Futuro Menos Gris</h1>
+            <p>Un Proyecto para un Aire Más Limpio en la Región Metropolitana</p>
+            <a href="#about" class="cta-button">Únete al Movimiento</a>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+        <h2>¿Quiénes Somos?</h2>
+        <p>Somos un proyecto innovador que utiliza drones para plantar árboles en áreas urbanas con baja arborización, ayudando a combatir la contaminación del aire y mejorar la calidad de vida en la ciudad.</p>
+    </section>
+
+    <section class="hypotheses">
+        <div class="hypothesis">
+            <h2>Boletines Interactivos</h2>
+            <p>Mantente informado y participa activamente en nuestro proyecto. Nuestros <strong>boletines interactivos</strong> te permitirán conocer el impacto de tu contribución en tiempo real y fortalecerán tu compromiso con el medio ambiente.</p>
+            <a href="#newsletter" class="cta-button secondary" id="abrirFormulario">¡Realiza nuestra encuesta!</a>
+        </div>
+        <div class="hypothesis">
+            <h2>Tu Aporte, Tu Salud</h2>
+            <p>Contribuye mensualmente y recibe actualizaciones periódicas sobre cómo tu apoyo está mejorando el aire que respiras. Además, obtén <strong>reconocimiento periódico</strong> por tu contribución y <strong>cuida de tu salud futura.</strong></p>
+            <a href="{% url 'promedio' %}" class="cta-button secondary">¡Resultados!</a>
+        </div>
+    </section>
+
+    <section class="hide-sec" id="hidesection">
+        <h2>¡Encuesta!</h2>
+        <form class="forma" method="POST">
+            {% csrf_token %}
+            <label>Nombre</label>
+            <input type="text" name="nombre" required>
+            <label>Edad</label>
+            <input type="number" name="edad" required>
+            <label>Comuna</label>
+            <input type="text" name="comuna" required>
+            <label>Correo</label>
+            <input type="email" name="correo" required>
+
+            <div class="dividivi">
+                <p class="pete">¿Te gustaría que al participar de este proyecto se te informara semanalmente de las actividades realizadas?</p>
+                <input type="radio" name="pregunta1" value="True" required> Sí
+                <input type="radio" name="pregunta1" value="False"> No
+            </div>
+
+            <div class="dividivi">
+                <p class="pete">¿Crees que informar sobre los beneficios de salud ayude a incentivar a las personas a participar en este proyecto?</p>
+                <input type="radio" name="pregunta2" value="True" required> Sí
+                <input type="radio" name="pregunta2" value="False"> No
+            </div>
+
+            <div class="dividivi">
+                <p class="pete">¿Un Reconocimiento periódico motivaría a una persona a seguir apoyando este proyecto?</p>
+                <input type="radio" name="pregunta3" value="True" required> Sí
+                <input type="radio" name="pregunta3" value="False"> No
+            </div>
+
+            <button class="cta-button botong" type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section class="impact">
+        <h2>Impacto en Números</h2>
+        <div class="stats">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Árboles Plantados</p>
+            </div>
+            <div class="stat-item">
+                <h3>1000+</h3>
+                <p>Toneladas de CO2 Reducidas</p>
+            </div>
+            <div class="stat-item">
+                <h3>200+</h3>
+                <p>Colaboradores Activos</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="join">
+        <h2>Haz la Diferencia</h2>
+        <p>Únete a nuestra comunidad y sé parte del cambio. Con tu aporte mensual, estarás ayudando a plantar árboles, mejorar el aire y crear un futuro más saludable para todos.</p>
+        <a href="#newsletter" class="cta-button">¡Contribuir Ahora!</a>
+    </section>
+
+    <footer>
+        <p>© 2024 GreenAir Tech | <a href="#contact">Contáctanos</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('abrirFormulario').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('hidesection').style.display = 'block';
+        });
+
+        document.querySelector('section.hide-sec button[type="submit"]').addEventListener('click', function(event) {
+            document.getElementById('hidesection').style.display = 'none';
+        });
+
+    </script>
+</body>
+</html>

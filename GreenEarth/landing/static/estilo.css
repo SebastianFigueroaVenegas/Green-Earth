@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #cdcdcd;
+    color: #333;
+}
+
+header {
+    background-image: url('../static/dron.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.header-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    background-color: #28a745;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+.about{
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.join{
+    padding-bottom: 2rem;
+    padding-left: 300px;
+    text-align: center;
+    width: 80%;
+}
+
+.hypotheses, .impact{
+    padding: 2rem;
+    text-align: center;
+}
+
+.hypotheses {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.hypothesis {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 45%;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 30%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.hide-sec{
+    display: none;
+    width: 500px;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-left: 500px;
+    flex-direction: column;
+}
+
+.hide-sec h2 {
+    text-align: center;
+}
+
+
+
+.forma{
+    width: 250px;
+    margin-left: 100px;
+    border: #28a745 solid 2px;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+
+}
+
+.forma label {
+    width: 100px;
+}
+
+.pete{
+    margin-bottom: 0;
+}
+
+.dividivi{
+    margin-top: 20px;
+}
+
+.forma input{
+    margin-bottom: 10px;
+}
+
+.dividivi input{
+    margin-top: 10px;
+}
+
+.botong{
+    margin-top: 20px;
+    margin-left: 50px;
+}
